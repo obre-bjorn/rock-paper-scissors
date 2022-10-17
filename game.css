@@ -1,0 +1,49 @@
+*, ::before, ::after{
+    box-sizing: border-box;
+    margin: 0;
+}
+body{
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container{
+    height: 600px;
+    width: 800px;
+    background-color: fuchsia;
+    border-radius: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 100px;
+}
+.game-info {
+    display: flex;
+    justify-content: center;
+    gap: 40%;
+    /* padding: 30px; */
+}
+.game > p{
+    margin: 0;
+}
+.controls{
+    display:flex;
+    justify-content: center; 
+    gap: 30px;
+}
+button{
+    border: 5px solid purple ;
+    width: 100px;
+    height: 100px;
+    font-size: 3em;
+    border-radius: 50%;
+    box-shadow: 2px 4px #888888;
+}
+button:hover{
+    background-color: lightpink;
+    box-shadow: 0px 15px 20px rgba(46, 229, 157, 0.4);
+  color: #fff;
+  transform: translateY(-7px);
+}

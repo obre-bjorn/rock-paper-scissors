@@ -5,12 +5,35 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rock, Paper & Scissors</title>
+    <link rel="stylesheet" href="game.css">
     <script src="game.js" defer></script>
 </head>
 <body>
     <div class="container">
-        <label for="choice">Enter Rock, Paper or Scissors</label>
-        <div><input id="choice" type="text"></div>
-    </div>
+        <div class="game-info">
+            <div class="game">
+                <p>ROCK</p>
+                <p>PAPER</p>
+                <p>SCISSORS</p>
+            </div>
+            <div class="score-info">
+                <div class="score">
+                    <p>Player: <span class="score">0</span></p>
+                    <p>Compuer: <span class ="score">0</span></p>
+                </div>
+        
+                <!-- <div class="round-info">
+                    <p>Round <span>1</span></p>
+                    <p>Player: <span class="score">0</span></p>
+                    <p>Compuer: <span class ="score">0</span></p>
+                </div> -->
+            </div>
+        </div>
+            <div class="controls">
+                <button class="choices" data-choice="scissors">✌️</button>
+                <button class="choices" data-choice="rock">✊</button>
+                <button class="choices" data-choice="paper">🤚</button>
+            </div>
+        </div>
 </body>
 </html>
