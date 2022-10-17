@@ -1,6 +1,10 @@
+//Dom elements
+let input = document.querySelector('#choice')
+
+
 //Choices 
 let choices = ['rock','paper','scissors']
-//Player choice
+
 
 // Computer's choice Between Rock,Paper and Scissors.
 let getComputerChoice =(choices)=>{
@@ -8,9 +12,6 @@ let getComputerChoice =(choices)=>{
     
 }
 
-
-
-//Computer random choice
 
 //Player scores
 let compScore = 0;
@@ -32,11 +33,9 @@ function playround(playerSelection, computerSelection){
         (playerSelection.toLowerCase() == 'paper' && computerSelection =='rock')){
             playerScore++
             rounds--
-            return 'You won!!!!'
         }else{
             compScore++
             rounds--
-            return 'You lose!!!!'
         }
     } 
 }
@@ -45,13 +44,14 @@ function playround(playerSelection, computerSelection){
 // Main game loop
 function game(){
     while (rounds > 0){
+        //Player choice
         let playerSelection = prompt('Enter ROCK, PAPER or SCISSORS: ');
         let computerSelection = getComputerChoice(choices)
         playround(playerSelection,computerSelection)
         console.log('Player Score: ' + playerScore + '\n' + 'Computer Score: ' + compScore +'\n'
         +'Rounds remaining: ' + rounds );
     }
-    return `${playerScore > compScore?'You Won. YaY!': 'You lost to pc. LOL!'}`
+    return `${playerScore > compScore? 'You Won. YaY!': 'You lost to a pc Godammit!!. LOL!'}`
 }
 
 
