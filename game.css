@@ -17,9 +17,10 @@ body{
 
 
 .container{
-    height: 600px;
+    height: 700px;
     width: 800px;
-    background: linear-gradient(#141e30, #243b55);;
+    padding: 100px;
+    background: linear-gradient(rgba(20, 30, 48, 0.9), rgba(36, 59, 85, 0.9));;
     border-radius: 40px;
     display: flex;
     flex-direction: column;
@@ -61,7 +62,7 @@ body{
 .controls{
     display:flex;
     justify-content: center; 
-    gap: 30px;
+    gap: 80px;
 }
 button{
     border: 5px solid orangered ;
@@ -71,6 +72,7 @@ button{
     border-radius: 50%;
     box-shadow: 2px 4px #141e30;
     background-color: #141e30;
+    transition: all ease-out 0.12s;
 }
 button:hover{
     background-color: #243b55;

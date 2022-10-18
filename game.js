@@ -1,6 +1,16 @@
 //Dom elements
 let input = document.querySelector('#choice')
+let playerChoices = [...document.querySelectorAll('.choices')]
 
+
+function playerSelection(e){
+    let playerSelection = e.target.getAttribute('data-choice')
+    console.log(playerSelection);
+}
+
+playerChoices.forEach(choice =>{
+    choice.addEventListener('click',playerSelection)
+});
 
 //Choices 
 let choices = ['rock','paper','scissors']
@@ -42,10 +52,11 @@ function playround(playerSelection, computerSelection){
 
 
 // Main game loop
+/*
 function game(){
     while (rounds > 0){
         //Player choice
-        let playerSelection = prompt('Enter ROCK, PAPER or SCISSORS: ');
+        //let playerSelection = prompt('Enter ROCK, PAPER or SCISSORS: ');
         let computerSelection = getComputerChoice(choices)
         playround(playerSelection,computerSelection)
         console.log('Player Score: ' + playerScore + '\n' + 'Computer Score: ' + compScore +'\n'
@@ -54,5 +65,5 @@ function game(){
     return `${playerScore > compScore? 'You Won. YaY!': 'You lost to a pc Godammit!!. LOL!'}`
 }
 
-
-console.log(game());
+*/
+//console.log(game());
