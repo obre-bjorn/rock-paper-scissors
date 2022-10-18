@@ -12,7 +12,7 @@ body{
     background-position: center;
     background-size: cover;
     color: white;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-family: 'Teko',sans-serif;
 }
 
 
@@ -25,6 +25,12 @@ body{
     flex-direction: column;
     justify-content: center;
     gap: 100px;
+}
+.title{
+    font-family: 'Teko',sans-serif;
+    font-weight: 700;
+    font-size: 4em;
+    color: orangered;
 }
 .game-info {
     display: flex;
@@ -58,16 +64,17 @@ body{
     gap: 30px;
 }
 button{
-    border: 5px solid purple ;
+    border: 5px solid orangered ;
     width: 100px;
     height: 100px;
     font-size: 3em;
     border-radius: 50%;
-    box-shadow: 2px 4px #888888;
+    box-shadow: 2px 4px #141e30;
+    background-color: #141e30;
 }
 button:hover{
-    background-color: lightpink;
-    box-shadow: 0px 15px 20px rgba(46, 229, 157, 0.4);
+    background-color: #243b55;
+    box-shadow: 0px 15px 20px rgba(240, 91, 5, 0.548);
   color: #fff;
   transform: translateY(-7px);
 }
