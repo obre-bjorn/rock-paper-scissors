@@ -1,56 +1,82 @@
 //Dom elements
-let input = document.querySelector('#choice')
-let playerChoices = [...document.querySelectorAll('.choices')]
+let input = document.querySelector('#choice');
+//let score = document.querySelectorAll('.s')
 
 
-function playerSelection(e){
-    let playerSelection = e.target.getAttribute('data-choice')
-    console.log(playerSelection);
+let playerChoices = [...document.querySelectorAll('.choices')];
+let playerChoiceDisplay = document.getElementById('player-choice');
+let computerChoiceDisplay = document.getElementById('computer-choice');
+
+// Choices for Computer
+
+
+function getPlayerSelection(e){
+    let playerSelection = e.target.getAttribute('data-choice');
+    playerChoiceDisplay.textContent = e.target.textContent;
+
+     return playerSelection;
 }
-
-playerChoices.forEach(choice =>{
-    choice.addEventListener('click',playerSelection)
-});
-
-//Choices 
-let choices = ['rock','paper','scissors']
 
 
 // Computer's choice Between Rock,Paper and Scissors.
 let getComputerChoice =(choices)=>{
-    return choices[Math.floor((Math.random()* choices.length))]
-    
+    let {sign,choice} =  choices[Math.floor((Math.random()* choices.length))];
+    computerChoiceDisplay.textContent = sign;
+
+    return choice;
 }
 
 
 //Player scores
+let pScore= 0;
 let compScore = 0;
-let playerScore = 0;
 
-// Rounds of games to play
-let rounds = 5
+document.getElementById('player-score').innerText = pScore
+document.getElementById('computer-score').innerText = compScore// Rounds of games to play
+let rounds = 5;
 
 
-function playround(playerSelection, computerSelection){
-    console.log( 'Player: ' + playerSelection);
-    console.log('Computer: ' + computerSelection);
+function playround(e){
+    let choices = [
+        {sign: '✊', choice: 'rock'},
+        {sign: '✌️', choice: 'scissors'},
+        {sign: '🤚', choice: 'paper'}
+    ];
+    let scoreDesc =  document.getElementById('score-desc');
+    let pScore = document.getElementById('player-score').textContent;
+    let compScore = document.getElementById('computer-score').textContent;
 
-    if (playerSelection.toLowerCase() == computerSelection ){
-        return "It's a Tie"
+    let playerSelection = getPlayerSelection(e);
+    let computerSelection = getComputerChoice(choices);
+    
+    if (playerSelection == computerSelection ){
+        scoreDesc.textContent = "It's a Tie";
+        return;
     }else{
-        if ((playerSelection.toLowerCase() == 'rock' && computerSelection =='scissors')||
-        (playerSelection.toLowerCase() == 'scissors' && computerSelection =='paper')||
-        (playerSelection.toLowerCase() == 'paper' && computerSelection =='rock')){
-            playerScore++
-            rounds--
+        if ((playerSelection == 'rock' && computerSelection =='scissors')||
+        (playerSelection == 'scissors' && computerSelection =='paper')||
+        (playerSelection == 'paper' && computerSelection =='rock')){
+            //playerScore++
+            playerSelection[0].toUpperCase();
+            scoreDesc.textContent = playerSelection;
+            ++pScore
+            document.getElementById('player-score').textContent = pScore
+            
+            //rounds--;
         }else{
-            compScore++
-            rounds--
+            computerSelection[0].toUpperCase();
+            scoreDesc.textContent = computerSelection;
+            ++compScore;
+            document.getElementById('computer-score').textContent = compScore
+            
+            //rounds--
         }
     } 
-}
+};
 
-
+playerChoices.forEach(choice =>{
+    choice.addEventListener('click', playround)
+});
 // Main game loop
 /*
 function game(){

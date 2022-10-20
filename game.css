@@ -18,14 +18,14 @@ body{
 
 .container{
     height: 700px;
-    width: 800px;
-    padding: 100px;
+    width: 70%;
     background: linear-gradient(rgba(20, 30, 48, 0.9), rgba(36, 59, 85, 0.9));;
     border-radius: 40px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     gap: 100px;
+    
 }
 .title{
     font-family: 'Teko',sans-serif;
@@ -38,12 +38,22 @@ body{
     flex-direction: column;
     align-items: center;
     gap: 40px;
+    
+    
     /* padding: 30px; */
 }
-.game > p{
-    margin: 0;
+.game{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 50px;
+}
+.score-info{
+    width: 90%;
 }
 .players{
+    width: 250px;
+    height: 250px;
     display: flex;
     padding: 50px;
     flex-direction: column;
@@ -51,15 +61,25 @@ body{
     gap:20px;
     border-radius: 10%;
     border: 3px solid silver;
-    width: 200px;
 }
 .score{
     display: flex;
     gap: 100px;
     align-items: center;
+    color: orangered;
+    font-size: 2rem;
+    
 }
+.round-results{
+    text-align: center;
+    transition: all 0.5ms;
+}
+/* .choice{
+    font-size: 3em;
+} */
 
 .controls{
+    margin-top: 50px;
     display:flex;
     justify-content: center; 
     gap: 80px;
@@ -72,7 +92,7 @@ button{
     border-radius: 50%;
     box-shadow: 2px 4px #141e30;
     background-color: #141e30;
-    transition: all ease-out 0.12s;
+    transition: all ease-out 0.2s;
 }
 button:hover{
     background-color: #243b55;

@@ -16,16 +16,20 @@
         <div class="game-info">
             <div class="game">
                 <p class="title"> Rock, Paper & Scissors</p>
-            </div>
             <div class="score-info">
                 <div class="score">
                     <div class="players" id="user">
                         <p class="player-name">Player</p>
-                        <p class="score">0</p>
+                        <p id="player-choice">✌️</p>
+                        <p id="player-score"></p>
+                    </div>
+                    <div class="round-results" id="score-desc">
+                        Rock Beats Scissors!!
                     </div>
                     <div class="players" id="computer">
                         <p class="player-name">Computer</p>
-                        <p class="score">0</p>
+                        <p id="computer-choice">✊</p>
+                        <p id="computer-score"></p>
                     </div>
                 </div>
             </div>
@@ -36,8 +40,8 @@
                 <button class="choices" data-choice="paper">🤚</button>
             </div>
             <footer id="footer">
-                Copyright Obre-Bjorn
+                <p>Copyright Obre-Bjorn</p>
             </footer>
-    </body>
     </div>
+    </body>
 </html>
