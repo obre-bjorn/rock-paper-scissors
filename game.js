@@ -64,7 +64,7 @@ function playround(e){
             
             //rounds--;
         }else{
-            computerSelection[0].toUpperCase();
+            computerSelection[0] = computerSelection[0].toUpperCase();
             scoreDesc.textContent = computerSelection;
             ++compScore;
             document.getElementById('computer-score').textContent = compScore
