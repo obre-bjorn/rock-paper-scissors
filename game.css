@@ -13,6 +13,7 @@ body{
     background-size: cover;
     color: white;
     font-family: 'Teko',sans-serif;
+    overflow-y: hidden;
 }
 .overlay{
     position: absolute;
@@ -77,7 +78,7 @@ body{
 
 
 .container{
-    height: 700px;
+    height: 90%;
     width: 70%;
     background: linear-gradient(rgba(20, 30, 48, 0.9), rgba(36, 59, 85, 0.9));;
     border-radius: 40px;
@@ -86,12 +87,14 @@ body{
     justify-content: center;
     gap: 100px;
     border: 2px solid orangered;
+    
 }
 .title{
     font-family: 'Teko',sans-serif;
     font-weight: 700;
     font-size: 4em;
     color: orangered;
+    margin-bottom: 50px;
 }
 .game-info {
     display: flex;
@@ -140,7 +143,7 @@ body{
     transition: all ease-in 0.5s;
     padding: 10px;
     border: 3px solid orangered;
-    border-radius: 10%;
+    border-radius: 8px;
     
 }
 /* .choice{
@@ -154,16 +157,17 @@ body{
     gap: 80px;
 }
 button.choices{
-    border: 5px solid orangered ;
+    border: 3px solid orangered ;
     width: 100px;
     height: 100px;
     font-size: 3em;
     border-radius: 50%;
     box-shadow: 2px 4px #141e30;
     background-color: #141e30;
-    transition: all ease-out 0.2s;
+    transition: all ease-in 0.1s;
 }
 button.choices:hover{
+    border: 5px solid orangered;
     background-color: #243b55;
     box-shadow: 0px 15px 20px rgba(240, 91, 5, 0.548);
   color: #fff;

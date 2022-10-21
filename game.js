@@ -105,7 +105,7 @@ function gameReset(){
     compScore = 0;
     playerScore.innerText = pScore
     computerScore.innerText = compScore;
-    scoreDesc.textContent = "Click on button to Begin!!";
+    scoreDesc.textContent = "Click on a button to Begin!!";
     overlay.classList.remove('active');
     reset.classList.remove('active');
 }
