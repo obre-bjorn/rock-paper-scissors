@@ -8,6 +8,7 @@ let playerChoiceDisplay = document.getElementById('player-choice');
 let computerChoiceDisplay = document.getElementById('computer-choice');
 let reset = document.getElementById('reset')
 let overlay = document.getElementById('overlay')
+let scoreDesc =  document.getElementById('score-desc');
 // Choices for Computer
 
 
@@ -37,7 +38,7 @@ let computerScore = document.getElementById('computer-score')// Rounds of games 
 
 playerScore.innerText = pScore
 computerScore.innerText = compScore 
-let rounds = 5;
+
 
 
 function playround(e){
@@ -46,7 +47,6 @@ function playround(e){
         {sign: '✌️', choice: 'scissors'},
         {sign: '🤚', choice: 'paper'}
     ];
-    let scoreDesc =  document.getElementById('score-desc');
     let pScore = document.getElementById('player-score').textContent;
     let compScore = document.getElementById('computer-score').textContent;
 
@@ -65,18 +65,32 @@ function playround(e){
             scoreDesc.textContent = `You Win!! \n ${playerSelection} beats ${computerSelection}`;
             ++pScore
             document.getElementById('player-score').textContent = pScore
-            rounds--;
+            
         }else{
             computerSelection[0] = computerSelection[0].toUpperCase();
             scoreDesc.textContent =`You Lost!! \n ${computerSelection} beats ${playerSelection}`;
             ++compScore;
             document.getElementById('computer-score').textContent = compScore
-            rounds--
         }
     } 
-    if (rounds < 1){
-     overlay.classList.add('active');
-     reset.classList.add('active');  
+    if(pScore == 5 || compScore == 5){
+        let resultEmote = document.getElementById('result-emote');
+        let result = document.getElementById('result')
+        let resetBtn = document.getElementById('reset-btn')
+        if(pScore > compScore){
+            resultEmote.textContent = "😄"
+            result.textContent = "You Won the Game!"
+            result.classList.remove('fail');
+            resetBtn.textContent = "Play Again"
+        }else{
+            resultEmote.textContent = "😪"
+            result.textContent = "Sorry! You lost the game." 
+            result.classList.add('fail')
+            resetBtn.textContent = "Try Again"
+        }
+
+        overlay.classList.add('active');
+        reset.classList.add('active');  
      
     }
     
@@ -90,7 +104,8 @@ function gameReset(){
     pScore = 0;
     compScore = 0;
     playerScore.innerText = pScore
-    computerScore.innerText = compScore
+    computerScore.innerText = compScore;
+    scoreDesc.textContent = "Click on button to Begin!!";
     overlay.classList.remove('active');
     reset.classList.remove('active');
 }
