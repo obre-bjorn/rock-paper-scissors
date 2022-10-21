@@ -6,7 +6,8 @@ let input = document.querySelector('#choice');
 let playerChoices = [...document.querySelectorAll('.choices')];
 let playerChoiceDisplay = document.getElementById('player-choice');
 let computerChoiceDisplay = document.getElementById('computer-choice');
-
+let reset = document.getElementById('reset')
+let overlay = document.getElementById('overlay')
 // Choices for Computer
 
 
@@ -31,8 +32,11 @@ let getComputerChoice =(choices)=>{
 let pScore= 0;
 let compScore = 0;
 
-document.getElementById('player-score').innerText = pScore
-document.getElementById('computer-score').innerText = compScore// Rounds of games to play
+let playerScore = document.getElementById('player-score')
+let computerScore = document.getElementById('computer-score')// Rounds of games to play
+
+playerScore.innerText = pScore
+computerScore.innerText = compScore 
 let rounds = 5;
 
 
@@ -58,25 +62,43 @@ function playround(e){
         (playerSelection == 'paper' && computerSelection =='rock')){
             //playerScore++
             playerSelection[0].toUpperCase();
-            scoreDesc.textContent = playerSelection;
+            scoreDesc.textContent = `You Win!! \n ${playerSelection} beats ${computerSelection}`;
             ++pScore
             document.getElementById('player-score').textContent = pScore
-            
-            //rounds--;
+            rounds--;
         }else{
             computerSelection[0] = computerSelection[0].toUpperCase();
-            scoreDesc.textContent = computerSelection;
+            scoreDesc.textContent =`You Lost!! \n ${computerSelection} beats ${playerSelection}`;
             ++compScore;
             document.getElementById('computer-score').textContent = compScore
-            
-            //rounds--
+            rounds--
         }
     } 
+    if (rounds < 1){
+     overlay.classList.add('active');
+     reset.classList.add('active');  
+     
+    }
+    
 };
 
-playerChoices.forEach(choice =>{
-    choice.addEventListener('click', playround)
-});
+
+
+
+function gameReset(){
+    rounds = 5;
+    pScore = 0;
+    compScore = 0;
+    playerScore.innerText = pScore
+    computerScore.innerText = compScore
+    overlay.classList.remove('active');
+    reset.classList.remove('active');
+}
+
+        playerChoices.forEach(choice =>{
+            choice.addEventListener('click', playround)
+        });
+
 // Main game loop
 /*
 function game(){

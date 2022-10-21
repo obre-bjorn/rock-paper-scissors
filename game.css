@@ -97,6 +97,7 @@ body{
 }
 .score-info{
     width: 90%;
+    
 }
 .players{
     width: 250px;
@@ -111,15 +112,19 @@ body{
 }
 .score{
     display: flex;
-    gap: 100px;
+    gap: 50px;
     align-items: center;
     color: orangered;
     font-size: 2rem;
     
+    
 }
 .round-results{
+    background-color: #141e30;
+    width: 300px;
     text-align: center;
     transition: all 0.5ms;
+    
 }
 /* .choice{
     font-size: 3em;
