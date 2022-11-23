@@ -82,13 +82,14 @@ function playround(e){
             result.textContent = "You Won the Game!"
             result.classList.remove('fail');
             resetBtn.textContent = "Play Again"
+            overlay.style.backgroundColor = "rgba(221,255,221,0.5)"
         }else{
+            overlay.style.backgroundColor = "rgba(250, 136, 7, 0.473)"
             resultEmote.textContent = "😪"
             result.textContent = "Sorry! You lost the game." 
             result.classList.add('fail')
             resetBtn.textContent = "Try Again"
         }
-
         overlay.classList.add('active');
         reset.classList.add('active');  
      
